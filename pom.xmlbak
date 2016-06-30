@@ -1,0 +1,91 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.tektutor</groupId>
+	<artifactId>hello_cpp</artifactId>
+	<version>1.0.0</version>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.0.2</version>
+                                <executions>
+                                        <execution>
+						<id>default-compile</id>
+                                                <phase>none</phase>
+                                        </execution>
+                                        <execution>
+						<id>default-testCompile</id>
+                                                <phase>none</phase>
+                                        </execution>
+                                </executions>
+			</plugin>
+                        <plugin>
+                                <groupId>org.apache.maven.plugins</groupId>
+                                <artifactId>maven-clean-plugin</artifactId>
+                                <version>2.0.2</version>
+                                <executions>
+                                        <execution>
+                                                <id>default-clean</id>
+                                                <phase>none</phase>
+                                        </execution>
+                                </executions>
+                        </plugin>
+
+			<plugin>		
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.4.0</version>
+                                <executions>
+					
+                                        <execution>
+						<id>defalut-clean</id>
+                                                <phase>clean</phase>
+                                                <goals>
+                                                        <goal>exec</goal>
+                                                </goals>
+						<configuration>
+							<executable>make</executable>
+								<arguments>
+									<argument>-C</argument>
+									<argument>source</argument>
+									<argument>clean</argument>
+								</arguments>
+						</configuration>
+                                        </execution>
+                                        <execution>
+						<id>default-mkdir</id>
+                                                <phase>compile</phase>
+                                                <goals>
+                                                        <goal>exec</goal>
+                                                </goals>
+						<configuration>
+							<executable>mkdir</executable>
+								<arguments>
+									<argument>target</argument>
+								</arguments>
+						</configuration>
+                                        </execution>
+                                        <execution>
+						<id>default-compile</id>
+                                                <phase>compile</phase>
+                                                <goals>
+                                                        <goal>exec</goal>
+                                                </goals>
+						<configuration>
+							<executable>make</executable>
+								<arguments>
+									<argument>-C </argument>
+									<argument>source</argument>
+								</arguments>
+						</configuration>
+                                        </execution>
+                                </executions>
+			</plugin>
+			
+		</plugins>
+		
+	</build>
+</project>
