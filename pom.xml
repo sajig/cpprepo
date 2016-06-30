@@ -40,6 +40,8 @@
 					<arguments>
 						<argument>-C</argument>
 						<argument>source</argument>
+						<argument>clean</argument>
+						<argument>all</argument>
 					</arguments>
 				</configuration>
 			</plugin>
