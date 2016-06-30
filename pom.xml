@@ -28,6 +28,26 @@
 				<version>1.4.0</version>
                                 <executions>
                                         <execution>
+                                                <phase>clean</phase>
+                                                <goals>
+                                                        <goal>exec</goal>
+                                                </goals>
+                                        </execution>
+                                </executions>
+				
+				<configuration>
+					<executable>make</executable>
+					<arguments>
+						<argument>clean</argument>
+					</arguments>
+				</configuration>
+			</plugin>		
+			<plugin>		
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.4.0</version>
+                                <executions>
+                                        <execution>
                                                 <phase>compile</phase>
                                                 <goals>
                                                         <goal>exec</goal>
