@@ -1,11 +1,13 @@
-all: hello.o main.o
-	g++ -o hello hello.o main.o
+TARGET_DIR=../target
 
-hello.o: hello.cpp
-	g++ -c hello.cpp
+all: ${TARGET_DIR}/hello.o ${TARGET_DIR}/main.o
+	g++ -o ${TARGET_DIR}/hello ${TARGET_DIR}/hello.o ${TARGET_DIR}/main.o
 
-main.o: main.cpp
-	g++ -c main.cpp
+${TARGET_DIR}/hello.o: hello.cpp
+	g++ -c hello.cpp -o ${TARGET_DIR}/hello.o 
+
+${TARGET_DIR}/main.o: main.cpp
+	g++ -c main.cpp -o ${TARGET_DIR}/main.o
 
 clean: 
-	rm *.o hello
+	rm ${TARGET_DIR}/*.o ${TARGET_DIR}/hello
