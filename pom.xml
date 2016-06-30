@@ -22,7 +22,7 @@
                                         </execution>
                                 </executions>
 			</plugin>
-                        <plugin>
+                        <!--plugin>
                                 <groupId>org.apache.maven.plugins</groupId>
                                 <artifactId>maven-clean-plugin</artifactId>
                                 <version>2.0.2</version>
@@ -32,15 +32,15 @@
                                                 <phase>none</phase>
                                         </execution>
                                 </executions>
-                        </plugin>
+                        </plugin-->
 
-			<plugin>		
+			<--plugin>		
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>1.4.0</version>
                                 <executions>
 					
-                                        <execution>
+                                        <!--execution>
 						<id>defalut-clean</id>
                                                 <phase>clean</phase>
                                                 <goals>
@@ -52,6 +52,19 @@
 									<argument>-C</argument>
 									<argument>source</argument>
 									<argument>clean</argument>
+								</arguments>
+						</configuration>
+                                        </execution-->
+                                        <execution>
+						<id>default-mkdir</id>
+                                                <phase>compile</phase>
+                                                <goals>
+                                                        <goal>exec</goal>
+                                                </goals>
+						<configuration>
+							<executable>mkdir</executable>
+								<arguments>
+									<argument>target</argument>
 								</arguments>
 						</configuration>
                                         </execution>
